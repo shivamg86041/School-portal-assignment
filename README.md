@@ -68,24 +68,9 @@ Follow these steps to run the project locally:
     - Form data is saved in `localStorage` so that it persists across page reloads and sessions.
     - On app load, the data is fetched from `localStorage` to populate the chart.
 
-## Screenshots
-
-### Form Page
-![Form Page](screenshots/form.png)
-
-### Marks Overview
-![Marks Overview](screenshots/marks-overview.png)
-
-### Responsive Design
-![Responsive Design](screenshots/responsive.png)
-
 ## Future Improvements
 
 - **User Authentication**: Add user authentication so that only registered users can submit forms.
 - **Database Integration**: Integrate with a backend database to store form submissions.
 - **Email Integration**: Allow users to receive email notifications after form submission.
 - **Form Validation**: Improve form validation with more detailed checks and error messages.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
