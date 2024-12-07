@@ -1,70 +1,91 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# School Form Submission Application
 
-## Available Scripts
+This is a React application where users can submit their details (like name, email, mobile number, course, and total marks). The submitted data is saved to `localStorage`, and users can download a PDF with the form's content.
 
-In the project directory, you can run:
+Additionally, a chart overview is displayed, showing the students' marks. The chart data updates based on form submissions and can be viewed in a responsive manner on various devices.
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Form Submission**: Submit student details via a well-designed form.
+- **PDF Generation**: Upon form submission, a PDF is generated that contains the student's details in a well-organized format.
+- **Marks Overview Chart**: A bar chart showing students' marks, which updates based on form submissions. The chart displays student names on the x-axis and marks on the y-axis. The email and marks are shown when hovering over the chart.
+- **Responsive Design**: The app is fully responsive and adjusts seamlessly to different screen sizes, including mobile, tablet, laptop, and desktop views.
+- **Local Storage**: Form data is stored in `localStorage` so it persists across sessions.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Tech Stack
 
-### `npm test`
+- **Frontend**: React.js, Tailwind CSS
+- **Libraries**:
+  - `jsPDF`: For generating the PDF.
+  - `recharts`: For displaying the marks overview chart.
+  - `react-router-dom`: For managing the app's routing.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation
 
-### `npm run build`
+Follow these steps to run the project locally:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone the repository:
+    ```bash
+    git clone <repository-url>
+    cd <project-directory>
+    ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. Install the dependencies:
+    ```bash
+    npm install
+    ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. Start the development server:
+    ```bash
+    npm start
+    ```
 
-### `npm run eject`
+4. Open your browser and visit [http://localhost:3000](http://localhost:3000).
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## App Structure
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **App.js**: The main component that renders the application layout, including the navbar and routing.
+- **Form.js**: The form component where users input their details.
+- **MarksOverview.js**: Displays the bar chart with the marks overview of all submitted students.
+- **generatePDF.js**: Function responsible for generating the PDF based on form data.
+- **localStorage.js**: Helper file for saving and retrieving data from `localStorage`.
+- **Tailwind CSS**: The app uses Tailwind CSS for responsive and customizable styling.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## How It Works
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. **Form Submission**:
+    - When the user fills out the form, their data is stored in `localStorage`.
+    - After the form submission, the user is redirected to a "Thank You" page, and a PDF is generated with the form data.
+    - The PDF is automatically downloaded.
 
-## Learn More
+2. **Marks Overview**:
+    - The marks overview chart displays student names and marks.
+    - The data updates dynamically when new form submissions are added.
+    - Users can hover over the chart to view the email and marks for each student.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3. **LocalStorage Handling**:
+    - Form data is saved in `localStorage` so that it persists across page reloads and sessions.
+    - On app load, the data is fetched from `localStorage` to populate the chart.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Screenshots
 
-### Code Splitting
+### Form Page
+![Form Page](screenshots/form.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Marks Overview
+![Marks Overview](screenshots/marks-overview.png)
 
-### Analyzing the Bundle Size
+### Responsive Design
+![Responsive Design](screenshots/responsive.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Future Improvements
 
-### Making a Progressive Web App
+- **User Authentication**: Add user authentication so that only registered users can submit forms.
+- **Database Integration**: Integrate with a backend database to store form submissions.
+- **Email Integration**: Allow users to receive email notifications after form submission.
+- **Form Validation**: Improve form validation with more detailed checks and error messages.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## License
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
